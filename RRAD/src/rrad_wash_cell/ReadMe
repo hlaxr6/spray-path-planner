@@ -1,0 +1,1 @@
+msg and srv contain ROS specific files that manage communication between the necessary files. See ROS documentation for more detail. Use ROS Kinetic for compatibility (requires Ubuntu 16.04)

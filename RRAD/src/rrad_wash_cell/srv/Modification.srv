@@ -1,0 +1,6 @@
+string JSON
+---
+LineSegmentArray Path
+string filename
+ImpingementArray Impingement
+

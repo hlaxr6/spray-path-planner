@@ -1,0 +1,15 @@
+int32 index
+float32 midpointX
+float32 midpointY
+float32 midpointZ
+float32 nozzleRotationX
+float32 nozzleRotationY
+float32 nozzleRotationZ
+float32 pointToX
+float32 pointToY
+float32 pointToZ
+float32 length
+float32 pointX
+float32 pointY
+float32 pointZ
+float32 times

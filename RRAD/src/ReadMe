@@ -1,0 +1,5 @@
+rrad_wash_cell is a ROS package that contains the planner and all of the algorithmic work along with the resulting data and test parts.
+
+gui contains the GODOT interface and related functionality
+
+gui_launch contains bash files to launch all of the necessary files all at once.

@@ -1,0 +1,6 @@
+
+This is a working catkin ROS workspace that should only need to be copied into a folder and made via catkin_make as long as certain filenames are changed to reflect the current location. 
+
+This was built in Ubuntu 16.04 using ROS Kinetic and Python 2.7. Any other packages used should be compatible with these for proper functionality.
+
+More detailed instructions can be found in RRAD Install Instructions and Usage Instructions as well as any ReadMe file contained within.

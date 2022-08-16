@@ -1,0 +1,29 @@
+Test_Parts: contains all of the avilable test parts as well as reduced versions for some and the set of 5 used in the initial analysis.
+
+Test_Data: is one of the specified outputs for the mass planner
+
+Test_Data_NoTime: is the specified output for the massplanner that was used in the initial analysis
+
+
+file_input_service_final: Opens file selection box and passes filename to the server
+	The filepath can be modified to dictate the intial directory
+
+path_storage_server_final: manages communication between the various files and the GODOT interface
+
+ImpingementRos: replaces impingement values with more accurate simulation. Needs the body to be replaced with Braden's work and uncomment the lines that call it in the storage server
+
+PartDataCollector: gathers basic info about the size and scale of all stl files in a defined folder
+
+Full_Analysis: takes all of the data from the mass planner and builds graphs and charts for interpretation
+
+NewPlanner: base path planner for initial path plans, returns a timestamped path for simulation or use with a robot. See code comments for more
+
+MassPlanner: crawls through a base directory for all parts and runs the same process described in NewPlanner for multiple treatments. Any edits to the process of NewPlanner need to be made here as well
+
+New Rework Planner: runs same process as NewPlanner, but it only builds the path for the selected facets.  Any edits to the process of NewPlanner need to be made here as well
+
+NewReworkPlanner and MassPlanner have comments for the sections that differ from NewPlanner, otherwise they may be missing some key information on process that can be found in NewPlanner.
+
+NewVizPlanner: the same as the NewPlanner, but the distance is measured as a percentage of the offset distance as oppossed to teh inverse square, this produces better visuals, but it will be deprecated when the impingement node is added to the system.
+
+TestNewPlanner: launches with TestlaunchBackend to allow testing of new methods before implementation into the other 3 planners

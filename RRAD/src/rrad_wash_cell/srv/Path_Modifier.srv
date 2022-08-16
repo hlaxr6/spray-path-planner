@@ -1,0 +1,5 @@
+LineSegmentArray Path
+float32 rotation 
+float32 attackangle
+---
+LineSegmentArray NewPath

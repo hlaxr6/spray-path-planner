@@ -1,0 +1,8 @@
+Part Name,ATimeTest13.0,Slice Width,13.0
+Naive,Mean
+Average Distance Value,0.6790438123130681
+Average Time Value,0.981067011625536
+Average Combined Value,0.6649196164275172
+Total Path Length,1147.6311866577319
+Total Path Time,111.64311866577316
+Percentage of Covered Facets,0.5032467532467533,310,306,616

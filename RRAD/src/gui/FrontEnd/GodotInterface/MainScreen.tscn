@@ -1,0 +1,744 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://Scripts/floorMesh.gd" type="Script" id=1]
+[ext_resource path="res://Materials/BlueFloor.tres" type="Material" id=2]
+[ext_resource path="res://Scripts/partViewArea.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/partView.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/path.gd" type="Script" id=5]
+[ext_resource path="res://Materials/glowingGreen.tres" type="Material" id=6]
+[ext_resource path="res://Models/BlenderedSprayer.msh" type="Mesh" id=7]
+[ext_resource path="res://Scripts/nozzle.gd" type="Script" id=8]
+[ext_resource path="res://Models/tinker.msh" type="Mesh" id=9]
+[ext_resource path="res://Materials/greenPointMarker.tres" type="Material" id=10]
+[ext_resource path="res://Scripts/PlayPauseRewindBox.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/rewindButton.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/playButton.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/nozzleSlider.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/cameraMovement.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/toolBar.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/selectSurfaceButton.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/surfaceSelectControls.gd" type="Script" id=18]
+
+[node name="TopSpot" type="Node"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 0.244655, 0.96961, 0, -0.96961, 0.244655, 0, 15.4682, 0 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 0
+shadow/max_distance = 0.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
+
+[node name="OmniLight" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, 17.483, 14.4553, 20.098 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight4" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, 14.0781, -5.25396, 10.1039 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, -20.0691, -8.62099, 19.0824 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight5" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, 17.2207, 10.7161, -18.4249 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight 2" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, -362.995, 2.05088, 7.03791 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 2.0
+params/attenuation = 1.0
+
+[node name="OmniLight6" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, 16.0816, -10.1758, -18.3767 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight7" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, -20.1084, -7.62134, -20.7142 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight3" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, -19.2851, 13.5531, 17.3255 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 0.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1000.0
+params/attenuation = 0.233258
+
+[node name="OmniLight1" type="OmniLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.0360841, -0.999349, 0, 0.999349, -0.0360841, 0, 0, 0, 1, -24.393, 12.9558, -18.698 )
+visibility/visible = false
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 3
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 500.0
+params/attenuation = 0.233258
+
+[node name="FloorMesh" type="MeshInstance" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.9887, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = true
+geometry/use_baked_light = true
+geometry/baked_light_tex_id = 1054219245
+mesh/mesh = null
+mesh/skeleton = NodePath("..")
+script/script = ExtResource( 1 )
+material = ExtResource( 2 )
+
+[node name="PartViewObject" type="RigidBody" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -285.798, 0, 0 )
+input/ray_pickable = true
+input/capture_on_drag = false
+shape_count = 0
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock = 0
+velocity/linear = Vector3( 0, 0, 0 )
+velocity/angular = Vector3( 0, 0, 0 )
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 3 )
+
+[node name="PartViewMesh" type="MeshInstance" parent="PartViewObject"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = false
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = true
+geometry/use_baked_light = true
+geometry/baked_light_tex_id = 39045120
+mesh/mesh = null
+mesh/skeleton = NodePath("..")
+script/script = ExtResource( 4 )
+
+[node name="Path" type="ImmediateGeometry" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -285.798, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+script/script = ExtResource( 5 )
+
+[node name="Nozzle" type="MeshInstance" parent="Path"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.0015, 0, 0, 0, 0.0015, -1.09139e-12, 0, 1.09139e-12, 0.0015, 281.832, -0.00653294, 0.0484045 )
+layers = 1
+geometry/visible = true
+geometry/material_override = ExtResource( 6 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = true
+geometry/baked_light_tex_id = 663767673
+mesh/mesh = ExtResource( 7 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+script/script = ExtResource( 8 )
+
+[node name="Spray" type="MeshInstance" parent="Path/Nozzle"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, -0.999894, 0.0145749, 0, -0.0145749, -0.999894, 0, 2.34793e-10, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 0
+geometry/receive_shadows = false
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 9 )
+mesh/skeleton = NodePath("..")
+material/0 = ExtResource( 10 )
+
+[node name="PlayPauseRewindBox" type="HBoxContainer" parent="Path/Nozzle"]
+
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 50.0
+margin/right = 50.0
+margin/bottom = 0.0
+alignment = 0
+script/script = ExtResource( 11 )
+
+[node name="RewindButton" type="Button" parent="Path/Nozzle/PlayPauseRewindBox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 58.0
+margin/bottom = 50.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Rewind"
+flat = false
+align = 0
+script/script = ExtResource( 12 )
+
+[node name="PlayPauseButton" type="Button" parent="Path/Nozzle/PlayPauseRewindBox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 62.0
+margin/top = 0.0
+margin/right = 100.0
+margin/bottom = 50.0
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Play"
+flat = false
+align = 0
+script/script = ExtResource( 13 )
+
+[node name="NozzleSlider" type="HSlider" parent="Path/Nozzle/PlayPauseRewindBox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 104.0
+margin/top = 0.0
+margin/right = 924.0
+margin/bottom = 50.0
+range/min = 0.0
+range/max = 100.0
+range/step = 0.1
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 30
+ticks_on_borders = false
+focus_mode = 2
+script/script = ExtResource( 14 )
+
+[node name="RotationPitch" type="Spatial" parent="Path"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+script/script = ExtResource( 15 )
+
+[node name="RotationYaw" type="Spatial" parent="Path/RotationPitch"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="Path/RotationPitch/RotationYaw"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187803, -0.0178862, 29.3565 )
+projection = 0
+fov = 47.013
+near = 0.1
+far = 10000.0
+keep_aspect = 1
+current = true
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+
+[node name="SpotLight1" type="SpotLight" parent="Path/RotationPitch/RotationYaw/Camera"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.994481, -0.0939177, -0.0467567, 0.0876712, -0.988735, 0.121315, -0.0576237, 0.116547, 0.991512, -0.921906, 4.44709, 28.1504 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 0.8
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 392.029
+params/attenuation = 1.0
+params/spot_angle = 30.0
+params/spot_attenuation = 1.0
+
+[node name="ToolBar" type="HBoxContainer" parent="Path"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 2.0
+margin/right = 463.0
+margin/bottom = 38.0
+alignment = 0
+script/script = ExtResource( 16 )
+
+[node name="SelectSurfaceButton" type="Button" parent="Path/ToolBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 101.0
+margin/bottom = 36.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Select Surface"
+flat = false
+script/script = ExtResource( 17 )
+
+[node name="SurfaceSelectControls" type="VBoxContainer" parent="Path/ToolBar/SelectSurfaceButton"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 38.0
+margin/right = 120.0
+margin/bottom = 165.0
+alignment = 0
+script/script = ExtResource( 18 )
+
+[node name="RemoveButton" type="Button" parent="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 120.0
+margin/bottom = 20.0
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Remove"
+flat = false
+
+[node name="ClearAllButton" type="Button" parent="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 24.0
+margin/right = 120.0
+margin/bottom = 44.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Clear All"
+flat = false
+
+[node name="BrushWidthButton" type="Button" parent="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 48.0
+margin/right = 120.0
+margin/bottom = 68.0
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Brush Width"
+flat = false
+
+[node name="BrushWidthSlider" type="HSlider" parent="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 103.0
+margin/top = 1.0
+margin/right = 260.0
+margin/bottom = 22.0
+range/min = 20.0
+range/max = 200.0
+range/step = 1.0
+range/page = 0.0
+range/value = 50.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+
+[node name="SubmitSelectionButton" type="Button" parent="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 72.0
+margin/right = 120.0
+margin/bottom = 92.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Submit Selection"
+flat = false
+
+[node name="FrontView" type="Button" parent="Path/ToolBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 105.0
+margin/top = 0.0
+margin/right = 184.0
+margin/bottom = 36.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Front View"
+flat = false
+
+[node name="TopView" type="Button" parent="Path/ToolBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 188.0
+margin/top = 0.0
+margin/right = 257.0
+margin/bottom = 36.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Top View"
+flat = false
+
+[node name="IsometricView" type="Button" parent="Path/ToolBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 261.0
+margin/top = 0.0
+margin/right = 369.0
+margin/bottom = 36.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Isometric View"
+flat = false
+
+[connection signal="input_event" from="PartViewObject" to="PartViewObject" method="_on_PartViewObject_input_event"]
+
+[connection signal="toggled" from="Path/Nozzle/PlayPauseRewindBox/RewindButton" to="Path/Nozzle/PlayPauseRewindBox/RewindButton" method="_on_RewindButton_toggled"]
+
+[connection signal="toggled" from="Path/Nozzle/PlayPauseRewindBox/PlayPauseButton" to="Path/Nozzle/PlayPauseRewindBox/PlayPauseButton" method="_on_PlayPauseButton_toggled"]
+
+[connection signal="input_event" from="Path/Nozzle/PlayPauseRewindBox/NozzleSlider" to="Path/Nozzle/PlayPauseRewindBox/NozzleSlider" method="_on_NozzleSlider_input_event"]
+
+[connection signal="toggled" from="Path/ToolBar/SelectSurfaceButton" to="Path/ToolBar/SelectSurfaceButton" method="_on_SelectSurfaceButton_toggled"]
+
+[connection signal="mouse_enter" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_SurfaceSelectControls_mouse_enter"]
+
+[connection signal="mouse_exit" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_SurfaceSelectControls_mouse_exit"]
+
+[connection signal="mouse_enter" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/RemoveButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_RemoveButton_mouse_enter"]
+
+[connection signal="mouse_exit" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/RemoveButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_RemoveButton_mouse_exit"]
+
+[connection signal="toggled" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/RemoveButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_RemoveButton_toggled"]
+
+[connection signal="mouse_enter" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/ClearAllButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_ClearAllButton_mouse_enter"]
+
+[connection signal="mouse_exit" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/ClearAllButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_ClearAllButton_mouse_exit"]
+
+[connection signal="pressed" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/ClearAllButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_ClearAllButton_pressed"]
+
+[connection signal="mouse_enter" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_BrushWidthButton_mouse_enter"]
+
+[connection signal="mouse_exit" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_BrushWidthButton_mouse_exit"]
+
+[connection signal="toggled" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_BrushWidthButton_toggled"]
+
+[connection signal="mouse_enter" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton/BrushWidthSlider" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_BrushWidthSlider_mouse_enter"]
+
+[connection signal="mouse_exit" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton/BrushWidthSlider" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_BrushWidthSlider_mouse_exit"]
+
+[connection signal="value_changed" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/BrushWidthButton/BrushWidthSlider" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_BrushWidthSlider_value_changed"]
+
+[connection signal="mouse_enter" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/SubmitSelectionButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_SubmitSelectionButton_mouse_enter"]
+
+[connection signal="mouse_exit" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/SubmitSelectionButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_SubmitSelectionButton_mouse_exit"]
+
+[connection signal="pressed" from="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls/SubmitSelectionButton" to="Path/ToolBar/SelectSurfaceButton/SurfaceSelectControls" method="_on_SubmitSelectionButton_pressed"]
+
+[connection signal="pressed" from="Path/ToolBar/FrontView" to="Path/ToolBar" method="_on_FrontView_pressed"]
+
+[connection signal="pressed" from="Path/ToolBar/TopView" to="Path/ToolBar" method="_on_TopView_pressed"]
+
+[connection signal="pressed" from="Path/ToolBar/IsometricView" to="Path/ToolBar" method="_on_IsometricView_pressed"]
+
+
